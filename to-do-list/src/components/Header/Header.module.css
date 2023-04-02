@@ -1,0 +1,44 @@
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    padding: 7rem;
+    background: var(--gray-700);
+  }
+  
+  .newTask {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 73.6rem;
+    margin: calc(-5.4rem / 2) auto;
+    color: var(--gray-300);
+}
+
+input {
+    width: 100%;
+    height: 5.4rem;
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid var(--gray-700);
+    background-color: var(--gray-500);
+    color: white;
+}
+  
+  button {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    background-color: var(--blue-dark);
+    border-radius: .8rem;
+    color: white;
+    padding: 1rem;
+    
+  }
+
+  button:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+  
