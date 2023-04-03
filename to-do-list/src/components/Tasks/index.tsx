@@ -3,17 +3,18 @@ import { Task } from "../Task";
 import styles from "./Tasks.module.css";
 
 interface TasksProp {
-  tasks: ITasks[]
+  tasks: ITasks[];
+  onDelete: (taskID: string) => void;
 }
 
-export function Tasks({tasks}: TasksProp) {
+export function Tasks({tasks, onDelete}: TasksProp) {
   return (
     <div className={styles.containerTasks}>
       <div className={styles.taskStatus}>
         <div className={styles.tasksCreated}>
           <span>Tarefas criadas</span>
           <div className={styles.amountTasks}>
-            5
+            {tasks.length}
           </div>
         </div>
 
@@ -26,7 +27,7 @@ export function Tasks({tasks}: TasksProp) {
       </div>
       
       <div className={styles.tasks}>
-          {tasks.map(task => <Task/>)}
+          {tasks.map(task => <Task task={task} onDelete={onDelete}/>)}
       </div>
     </div>
   );
