@@ -36,7 +36,10 @@ export function Header({onAddTask}: HeaderProps) {
             value={titleTasks}
             onChange={handleChangeInput}
           />
-          <button><span>Criar</span><img src={plus} alt="" /></button>
+          <button className={styles.buttonTasks}>
+            <span>Criar</span>
+            <img src={plus} alt="" />
+          </button>
         </div>
       </form>
     </>
