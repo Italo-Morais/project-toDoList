@@ -5,9 +5,11 @@ import styles from "./Tasks.module.css";
 interface TasksProp {
   tasks: ITasks[];
   onDelete: (taskID: string) => void;
+  onCompleted: (taskID: string) => void;
 }
 
-export function Tasks({tasks, onDelete}: TasksProp) {
+export function Tasks({tasks, onDelete, onCompleted}: TasksProp) {
+  const tasksCompleted = tasks.filter(task => task.isCompleted)
   return (
     <div className={styles.containerTasks}>
       <div className={styles.taskStatus}>
@@ -21,13 +23,13 @@ export function Tasks({tasks, onDelete}: TasksProp) {
         <div className={styles.tasksCompleted}>
             <span>Tarefas concluídas</span>
             <div className={styles.amountTasksCompleted}>
-                2 de 5
+                {tasksCompleted.length} de {tasks.length}
             </div>
         </div>
       </div>
       
       <div className={styles.tasks}>
-          {tasks.map(task => <Task task={task} onDelete={onDelete}/>)}
+          {tasks.map(task => <Task task={task} onDelete={onDelete} onCompleted={onCompleted}/>)}
       </div>
     </div>
   );
