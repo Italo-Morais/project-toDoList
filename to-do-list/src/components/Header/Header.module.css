@@ -14,6 +14,7 @@
   max-width: 73.6rem;
   margin: calc(-5.4rem / 2) auto;
   color: var(--gray-300);
+  padding-inline: 1rem;
 }
 
 input {
@@ -26,6 +27,10 @@ input {
   color: white;
 }
 
+input:focus {
+  outline: .1rem solid var(--purple);
+}
+
 .buttonTasks {
   display: flex;
   align-items: center;
@@ -34,6 +39,7 @@ input {
   border-radius: 0.8rem;
   color: white;
   padding: 1rem;
+  border: none;
 }
 
 .buttonTasks:hover {
